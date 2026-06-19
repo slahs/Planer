@@ -1,5 +1,5 @@
 // Einfacher Service Worker für Offline-Betrieb (App-Shell Cache)
-const CACHE = 'tickets-v1';
+const CACHE = 'tickets-v2';
 const ASSETS = [
   './',
   './index.html',

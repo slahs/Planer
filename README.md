@@ -27,12 +27,14 @@ Damit deine Tickets auf allen Geräten verfügbar sind, kannst du sie automatisc
 ### 1. Personal Access Token erstellen
 - Öffne <https://github.com/settings/tokens?type=beta> („Fine-grained tokens").
 - **Generate new token** → Name z. B. `tickets-sync`, Ablaufdatum nach Wunsch.
+- **Resource owner:** dein persönlicher GitHub-Account.
+- **Repository access:** reicht auf „Public repositories“ oder ein einzelnes Repo; wichtig ist hier aber die Account Permission.
 - **Account permissions → Gists → Read and write**.
 - Token generieren und **kopieren** (er wird nur einmal angezeigt).
 
 ### 2. In der App einrichten
 - Oben in der Toolbar auf **☁️ Sync** klicken.
-- Token einfügen, **Gist-ID leer lassen** (wird beim ersten Upload automatisch angelegt).
+- Token einfügen, **Gist-ID leer lassen** (wird beim ersten Upload automatisch angelegt). Danach am besten einmal **🔎 Verbindung testen** klicken.
 - **„Automatisch synchronisieren"** anhaken → **Speichern** → **⬆️ Zum Gist speichern**.
 - Die App speichert die neue **Gist-ID** automatisch.
 

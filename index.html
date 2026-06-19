@@ -1,20 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Meine Tickets</title>
-<meta name="theme-color" content="#6366f1" />
-<meta name="description" content="Persönlicher Ticket- & Aufgaben-Manager mit Wiederholungen, Erinnerungen und optionalem GitHub-Sync." />
-<link rel="manifest" href="manifest.webmanifest" />
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Tickets" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="#6366f1" name="theme-color"/>
+<meta content="Persönlicher Ticket- &amp; Aufgaben-Manager mit Wiederholungen, Erinnerungen und optionalem GitHub-Sync." name="description"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="icons/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Tickets" name="apple-mobile-web-app-title"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bg: #0b1020;
@@ -227,134 +228,126 @@
 </head>
 <body>
 <div class="container">
-  <header class="app">
-    <div class="brand">
-      <div class="logo">✓</div>
-      <div>
-        <h1>Meine Tickets</h1>
-        <div class="sub" id="todayLabel"></div>
-      </div>
-    </div>
-    <div class="toolbar">
-      <button class="btn ghost" id="themeBtn" title="Theme wechseln">🌓</button>
-      <button class="btn ghost" id="notifyBtn" title="Erinnerungen aktivieren">🔔</button>
-      <button class="btn ghost" id="exportBtn" title="Exportieren">⬇️ Export</button>
-      <button class="btn ghost" id="importBtn" title="Importieren">⬆️ Import</button>
-      <button class="btn ghost" id="seriesBtn" title="Wiederkehrende Serien verwalten">🔁 Serien</button>
-      <button class="btn primary" id="addBtn">+ Neues Ticket</button>
-      <input type="file" id="fileInput" accept="application/json" hidden />
-    </div>
-  </header>
-
-  <section class="stats" id="stats"></section>
-
-  <section class="filters">
-    <input type="search" id="search" placeholder="Suchen… (Titel, Notizen, Kategorie)" />
-    <select id="sortSel">
-      <option value="time">Sortierung: Zeit</option>
-      <option value="urgency">Sortierung: Dringlichkeit</option>
-      <option value="created">Sortierung: Erstelldatum</option>
-    </select>
-    <div class="chips" id="filterChips">
-      <button class="chip active" data-filter="all">Alle</button>
-      <button class="chip" data-filter="open">Offen</button>
-      <button class="chip" data-filter="done">Erledigt</button>
-      <button class="chip" data-filter="overdue">Überfällig</button>
-      <button class="chip" data-filter="today">Heute</button>
-      <button class="chip" data-filter="week">Diese Woche</button>
-    </div>
-  </section>
-
-  <main id="list"></main>
-
-  <div class="footer-hint">
-    <kbd>N</kbd> neues Ticket · <kbd>/</kbd> suchen · alles wird lokal auf deinem Rechner gespeichert
+<header class="app">
+<div class="brand">
+<div class="logo">✓</div>
+<div>
+<h1>Meine Tickets</h1>
+<div class="sub" id="todayLabel"></div>
+</div>
+</div>
+<div class="toolbar">
+<button class="btn ghost" id="themeBtn" title="Theme wechseln">🌓</button>
+<button class="btn ghost" id="notifyBtn" title="Erinnerungen aktivieren">🔔</button>
+<button class="btn ghost" id="exportBtn" title="Exportieren">⬇️ Export</button>
+<button class="btn ghost" id="importBtn" title="Importieren">⬆️ Import</button>
+<button class="btn ghost" id="seriesBtn" title="Wiederkehrende Serien verwalten">🔁 Serien</button>
+<button class="btn primary" id="addBtn">+ Neues Ticket</button>
+<input accept="application/json" hidden="" id="fileInput" type="file"/>
+</div>
+</header>
+<section class="stats" id="stats"></section>
+<section class="filters">
+<input id="search" placeholder="Suchen… (Titel, Notizen, Kategorie)" type="search"/>
+<select id="sortSel">
+<option value="time">Sortierung: Zeit</option>
+<option value="urgency">Sortierung: Dringlichkeit</option>
+<option value="created">Sortierung: Erstelldatum</option>
+</select>
+<div class="chips" id="filterChips">
+<button class="chip active" data-filter="all">Alle</button>
+<button class="chip" data-filter="open">Offen</button>
+<button class="chip" data-filter="done">Erledigt</button>
+<button class="chip" data-filter="overdue">Überfällig</button>
+<button class="chip" data-filter="today">Heute</button>
+<button class="chip" data-filter="week">Diese Woche</button>
+</div>
+</section>
+<main id="list"></main>
+<div class="footer-hint">
+<kbd>N</kbd> neues Ticket · <kbd>/</kbd> suchen · alles wird lokal auf deinem Rechner gespeichert
   </div>
 </div>
-
 <!-- Modal -->
 <div class="backdrop" id="backdrop">
-  <div class="modal" role="dialog" aria-modal="true">
-    <h2 id="modalTitle">Neues Ticket</h2>
-    <form id="ticketForm">
-      <div class="field">
-        <label for="t-title">Titel *</label>
-        <input id="t-title" required maxlength="200" placeholder="Was steht an?" />
-      </div>
-      <div class="row">
-        <div class="field">
-          <label for="t-date">Datum</label>
-          <input id="t-date" type="date" />
-        </div>
-        <div class="field">
-          <label for="t-time">Uhrzeit</label>
-          <input id="t-time" type="time" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label for="t-cat">Kategorie</label>
-          <input id="t-cat" list="catList" placeholder="z.B. Arbeit, Erinnerung" />
-          <datalist id="catList"></datalist>
-        </div>
-        <div class="field">
-          <label for="t-prio">Priorität</label>
-          <select id="t-prio">
-            <option value="low">Niedrig</option>
-            <option value="normal" selected>Normal</option>
-            <option value="high">Hoch</option>
-            <option value="critical">Kritisch</option>
-          </select>
-        </div>
-      </div>
-      <div class="field">
-        <label for="t-notes">Notizen</label>
-        <textarea id="t-notes" maxlength="2000" placeholder="Optional…"></textarea>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label for="t-freq">Wiederholung</label>
-          <select id="t-freq">
-            <option value="none" selected>Keine</option>
-            <option value="daily">Täglich</option>
-            <option value="weekly">Wöchentlich (bestimmte Tage)</option>
-            <option value="monthly">Monatlich (am gleichen Datum)</option>
-          </select>
-        </div>
-        <div class="field" id="weekdaysField" style="display:none">
-          <label>Wochentage</label>
-          <div class="chips" id="weekdayChips">
-            <button type="button" class="chip" data-wd="1">Mo</button>
-            <button type="button" class="chip" data-wd="2">Di</button>
-            <button type="button" class="chip" data-wd="3">Mi</button>
-            <button type="button" class="chip" data-wd="4">Do</button>
-            <button type="button" class="chip" data-wd="5">Fr</button>
-            <button type="button" class="chip" data-wd="6">Sa</button>
-            <button type="button" class="chip" data-wd="0">So</button>
-          </div>
-        </div>
-      </div>
-      <div class="actions-row">
-        <button type="button" class="btn ghost" id="cancelBtn">Abbrechen</button>
-        <button type="submit" class="btn primary" id="saveBtn">Speichern</button>
-      </div>
-    </form>
-  </div>
+<div aria-modal="true" class="modal" role="dialog">
+<h2 id="modalTitle">Neues Ticket</h2>
+<form id="ticketForm">
+<div class="field">
+<label for="t-title">Titel *</label>
+<input id="t-title" maxlength="200" placeholder="Was steht an?" required=""/>
 </div>
-
+<div class="row">
+<div class="field">
+<label for="t-date">Datum</label>
+<input id="t-date" type="date"/>
+</div>
+<div class="field">
+<label for="t-time">Uhrzeit</label>
+<input id="t-time" type="time"/>
+</div>
+</div>
+<div class="row">
+<div class="field">
+<label for="t-cat">Kategorie</label>
+<input id="t-cat" list="catList" placeholder="z.B. Arbeit, Erinnerung"/>
+<datalist id="catList"></datalist>
+</div>
+<div class="field">
+<label for="t-prio">Priorität</label>
+<select id="t-prio">
+<option value="low">Niedrig</option>
+<option selected="" value="normal">Normal</option>
+<option value="high">Hoch</option>
+<option value="critical">Kritisch</option>
+</select>
+</div>
+</div>
+<div class="field">
+<label for="t-notes">Notizen</label>
+<textarea id="t-notes" maxlength="2000" placeholder="Optional…"></textarea>
+</div>
+<div class="row">
+<div class="field">
+<label for="t-freq">Wiederholung</label>
+<select id="t-freq">
+<option selected="" value="none">Keine</option>
+<option value="daily">Täglich</option>
+<option value="weekly">Wöchentlich (bestimmte Tage)</option>
+<option value="monthly">Monatlich (am gleichen Datum)</option>
+</select>
+</div>
+<div class="field" id="weekdaysField" style="display:none">
+<label>Wochentage</label>
+<div class="chips" id="weekdayChips">
+<button class="chip" data-wd="1" type="button">Mo</button>
+<button class="chip" data-wd="2" type="button">Di</button>
+<button class="chip" data-wd="3" type="button">Mi</button>
+<button class="chip" data-wd="4" type="button">Do</button>
+<button class="chip" data-wd="5" type="button">Fr</button>
+<button class="chip" data-wd="6" type="button">Sa</button>
+<button class="chip" data-wd="0" type="button">So</button>
+</div>
+</div>
+</div>
+<div class="actions-row">
+<button class="btn ghost" id="cancelBtn" type="button">Abbrechen</button>
+<button class="btn primary" id="saveBtn" type="submit">Speichern</button>
+</div>
+</form>
+</div>
+</div>
 <div class="toast" id="toast"></div>
-
 <!-- Series modal -->
 <div class="backdrop" id="seriesBackdrop">
-  <div class="modal" role="dialog" aria-modal="true" style="max-width:600px">
-    <h2>Wiederkehrende Serien</h2>
-    <div id="seriesList" style="display:grid;gap:10px;max-height:60vh;overflow:auto;margin-bottom:14px"></div>
-    <div class="actions-row">
-      <button type="button" class="btn primary" id="closeSeriesBtn">Schließen</button>
-    </div>
-  </div>
+<div aria-modal="true" class="modal" role="dialog" style="max-width:600px">
+<h2>Wiederkehrende Serien</h2>
+<div id="seriesList" style="display:grid;gap:10px;max-height:60vh;overflow:auto;margin-bottom:14px"></div>
+<div class="actions-row">
+<button class="btn primary" id="closeSeriesBtn" type="button">Schließen</button>
 </div>
-
+</div>
+</div>
 <script>
 (() => {
   const STORAGE_KEY = 'my-tickets-v2';
@@ -887,39 +880,37 @@
   render();
 })();
 </script>
-
 <!-- ============ GitHub Gist Sync + PWA ============ -->
 <div class="backdrop" id="syncBackdrop">
-  <div class="modal" role="dialog" aria-modal="true" style="max-width:560px">
-    <h2>☁️ GitHub-Sync</h2>
-    <p style="color:var(--muted);margin-top:-6px;font-size:13px;line-height:1.5">
+<div aria-modal="true" class="modal" role="dialog" style="max-width:560px">
+<h2>☁️ GitHub-Sync</h2>
+<p style="color:var(--muted);margin-top:-6px;font-size:13px;line-height:1.5">
       Speichere deine Tickets in einem privaten <b>GitHub Gist</b>, damit sie auf allen Geräten verfügbar sind.
-      Du brauchst nur ein Personal Access Token mit dem Scope <code>gist</code> und eine Gist-ID.
-      <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener" style="color:var(--primary)">Token erstellen →</a>
-    </p>
-    <div class="form-row">
-      <label>GitHub Token (Scope: gist)</label>
-      <input type="password" id="syncToken" placeholder="ghp_…" autocomplete="off" />
-    </div>
-    <div class="form-row">
-      <label>Gist-ID <span style="color:var(--muted);font-weight:400">(leer lassen, um einen neuen privaten Gist zu erstellen)</span></label>
-      <input type="text" id="syncGistId" placeholder="z. B. 7a9b…f12" autocomplete="off" />
-    </div>
-    <div class="form-row">
-      <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
-        <input type="checkbox" id="syncAuto" /> Automatisch synchronisieren (beim Start & bei Änderungen)
-      </label>
-    </div>
-    <div style="font-size:12px;color:var(--muted);margin:-4px 0 10px" id="syncStatus">Noch nicht verbunden.</div>
-    <div class="actions-row" style="flex-wrap:wrap;gap:8px">
-      <button type="button" class="btn ghost" id="syncCloseBtn">Schließen</button>
-      <button type="button" class="btn ghost" id="syncPullBtn">⬇️ Vom Gist laden</button>
-      <button type="button" class="btn ghost" id="syncPushBtn">⬆️ Zum Gist speichern</button>
-      <button type="button" class="btn primary" id="syncSaveBtn">Speichern</button>
-    </div>
-  </div>
+      Du brauchst ein Personal Access Token mit <b>Gists → Read and write</b>. Die Gist-ID kannst du leer lassen; beim ersten Upload wird sie automatisch erstellt.
+      <a href="https://github.com/settings/tokens?type=beta" rel="noopener" style="color:var(--primary)" target="_blank">Fine-grained Token erstellen →</a>
+</p>
+<div class="form-row">
+<label>GitHub Token (Fine-grained: Gists → Read and write)</label>
+<input autocomplete="off" id="syncToken" placeholder="github_pat_… oder ghp_…" type="password"/>
 </div>
-
+<div class="form-row">
+<label>Gist-ID <span style="color:var(--muted);font-weight:400">(leer lassen, um einen neuen privaten Gist zu erstellen)</span></label>
+<input autocomplete="off" id="syncGistId" placeholder="z. B. 7a9b…f12" type="text"/>
+</div>
+<div class="form-row">
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+<input id="syncAuto" type="checkbox"/> Automatisch synchronisieren (beim Start &amp; bei Änderungen)
+      </label>
+</div>
+<div id="syncStatus" style="font-size:12px;color:var(--muted);margin:-4px 0 10px">Noch nicht verbunden.</div>
+<div class="actions-row" style="flex-wrap:wrap;gap:8px">
+<button class="btn ghost" id="syncTestBtn" type="button">🔎 Verbindung testen</button><button class="btn ghost" id="syncCloseBtn" type="button">Schließen</button>
+<button class="btn ghost" id="syncPullBtn" type="button">⬇️ Vom Gist laden</button>
+<button class="btn ghost" id="syncPushBtn" type="button">⬆️ Zum Gist speichern</button>
+<button class="btn primary" id="syncSaveBtn" type="button">Speichern</button>
+</div>
+</div>
+</div>
 <script>
 (() => {
   // ---------- Sync-Button in Toolbar ----------
@@ -938,7 +929,7 @@
   const FILE_NAME = 'my-tickets.json';
 
   const loadCfg = () => { try { return JSON.parse(localStorage.getItem(CFG_KEY)) || {}; } catch { return {}; } };
-  const saveCfg = (c) => localStorage.setItem(CFG_KEY, JSON.stringify(c));
+  const saveCfg = (c) => localStorage.setItem(CFG_KEY, JSON.stringify({ ...c, gistId: normalizeGistId(c.gistId || '') }));
   const loadMeta = () => { try { return JSON.parse(localStorage.getItem(META_KEY)) || {}; } catch { return {}; } };
   const saveMeta = (m) => localStorage.setItem(META_KEY, JSON.stringify(m));
 
@@ -949,32 +940,93 @@
     if (!t) return alert(msg);
     t.textContent = msg; t.classList.add('show');
     clearTimeout(window.__syncToastT);
-    window.__syncToastT = setTimeout(() => t.classList.remove('show'), 2000);
+    window.__syncToastT = setTimeout(() => t.classList.remove('show'), 2600);
   };
+
+  function normalizeGistId(input) {
+    const value = String(input || '').trim();
+    if (!value) return '';
+    const match = value.match(/[a-f0-9]{20,40}/i);
+    return match ? match[0] : value;
+  }
 
   function currentPayload() {
     return {
       tickets: JSON.parse(localStorage.getItem(TICKETS_KEY) || '[]'),
       series:  JSON.parse(localStorage.getItem(SERIES_KEY)  || '[]'),
       updatedAt: new Date().toISOString(),
-      app: 'meine-tickets', version: 1
+      app: 'meine-tickets', version: 2
     };
+  }
+
+  function githubErrorMessage(path, method, statusCode, bodyText) {
+    let githubMessage = bodyText;
+    try {
+      const parsed = JSON.parse(bodyText);
+      githubMessage = parsed.message || bodyText;
+    } catch {}
+
+    const action = method.toUpperCase() + ' ' + path;
+    if (statusCode === 404 && path === '/gists') {
+      return `GitHub 404 bei ${action}: Der Token ist sehr wahrscheinlich falsch oder hat keine Gists-Schreibrechte. Erstelle einen Fine-grained Token mit Account permissions → Gists → Read and write.`;
+    }
+    if (statusCode === 404 && path.startsWith('/gists/')) {
+      return `GitHub 404 bei ${action}: Gist-ID nicht gefunden oder der Token darf diesen privaten Gist nicht lesen/schreiben.`;
+    }
+    if (statusCode === 401) {
+      return `GitHub 401 bei ${action}: Token ungültig, abgelaufen oder falsch kopiert.`;
+    }
+    if (statusCode === 403) {
+      return `GitHub 403 bei ${action}: Zugriff blockiert. Prüfe Token-Rechte, Ablaufdatum und Rate-Limit.`;
+    }
+    if (statusCode === 422) {
+      return `GitHub 422 bei ${action}: GitHub hat die Daten abgelehnt. Details: ${githubMessage}`;
+    }
+    return `GitHub ${statusCode} bei ${action}: ${githubMessage}`;
   }
 
   async function gistFetch(path, opts = {}) {
     const cfg = loadCfg();
     if (!cfg.token) throw new Error('Kein Token konfiguriert');
+    const method = (opts.method || 'GET').toUpperCase();
     const res = await fetch('https://api.github.com' + path, {
       ...opts,
       headers: {
-        'Authorization': 'token ' + cfg.token,
+        'Authorization': 'Bearer ' + cfg.token,
         'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json',
+        'X-GitHub-Api-Version': '2022-11-28',
         ...(opts.headers || {})
       }
     });
-    if (!res.ok) throw new Error('GitHub ' + res.status + ': ' + (await res.text()).slice(0, 200));
-    return res.json();
+    const text = await res.text();
+    if (!res.ok) throw new Error(githubErrorMessage(path, method, res.status, text.slice(0, 800)));
+    return text ? JSON.parse(text) : null;
+  }
+
+  async function testConnection() {
+    saveCfg({
+      ...loadCfg(),
+      token:  $('#syncToken').value.trim(),
+      gistId: normalizeGistId($('#syncGistId').value),
+      auto:   $('#syncAuto').checked
+    });
+    const cfg = loadCfg();
+    $('#syncGistId').value = cfg.gistId || '';
+    if (!cfg.token) { toast('Kein Token eingetragen'); return; }
+
+    try {
+      status('Teste GitHub-Verbindung …');
+      const user = await gistFetch('/user');
+      await gistFetch('/gists?per_page=1');
+      if (cfg.gistId) await gistFetch('/gists/' + encodeURIComponent(cfg.gistId));
+      status(`Verbunden als ${user.login}. Gist-Zugriff sieht gut aus.`);
+      toast('GitHub-Verbindung OK');
+    } catch (e) {
+      console.error(e);
+      status(e.message);
+      toast('Fehler: ' + e.message);
+    }
   }
 
   async function pushNow({ silent = false } = {}) {
@@ -983,8 +1035,9 @@
     const payload = currentPayload();
     const body = { files: { [FILE_NAME]: { content: JSON.stringify(payload, null, 2) } } };
     try {
-      let gistId = cfg.gistId;
+      let gistId = normalizeGistId(cfg.gistId);
       if (!gistId) {
+        status('Erstelle privaten Gist …');
         const created = await gistFetch('/gists', {
           method: 'POST',
           body: JSON.stringify({ description: 'Meine Tickets (Sync)', public: false, ...body })
@@ -993,24 +1046,28 @@
         cfg.gistId = gistId; saveCfg(cfg);
         const idInput = $('#syncGistId'); if (idInput) idInput.value = gistId;
       } else {
-        await gistFetch('/gists/' + gistId, { method: 'PATCH', body: JSON.stringify(body) });
+        status('Lade zum Gist hoch …');
+        await gistFetch('/gists/' + encodeURIComponent(gistId), { method: 'PATCH', body: JSON.stringify(body) });
       }
       saveMeta({ ...loadMeta(), lastPush: payload.updatedAt });
       status('Letzter Upload: ' + new Date().toLocaleString('de-DE'));
       if (!silent) toast('☁️ Hochgeladen');
     } catch (e) {
       console.error(e);
+      status(e.message);
       if (!silent) toast('Fehler: ' + e.message);
     }
   }
 
   async function pullNow({ silent = false, reloadIfChanged = false } = {}) {
     const cfg = loadCfg();
-    if (!cfg.token || !cfg.gistId) { if (!silent) toast('Token & Gist-ID nötig'); return false; }
+    const gistId = normalizeGistId(cfg.gistId);
+    if (!cfg.token || !gistId) { if (!silent) toast('Token & Gist-ID nötig'); return false; }
     try {
-      const gist = await gistFetch('/gists/' + cfg.gistId);
+      status('Lade vom Gist …');
+      const gist = await gistFetch('/gists/' + encodeURIComponent(gistId));
       const file = gist.files && gist.files[FILE_NAME];
-      if (!file) { if (!silent) toast('Keine Datei im Gist gefunden'); return false; }
+      if (!file) { if (!silent) toast('Keine Datei my-tickets.json im Gist gefunden'); return false; }
       const content = file.truncated && file.raw_url ? await (await fetch(file.raw_url)).text() : file.content;
       const data = JSON.parse(content);
       const localTickets = localStorage.getItem(TICKETS_KEY) || '[]';
@@ -1034,6 +1091,7 @@
       }
     } catch (e) {
       console.error(e);
+      status(e.message);
       if (!silent) toast('Fehler: ' + e.message);
       return false;
     }
@@ -1046,7 +1104,7 @@
     __rawSetItem(key, value);
     if (key === TICKETS_KEY || key === SERIES_KEY) {
       const cfg = loadCfg();
-      if (cfg.auto && cfg.token && cfg.gistId) {
+      if (cfg.auto && cfg.token && normalizeGistId(cfg.gistId)) {
         clearTimeout(pushTimer);
         pushTimer = setTimeout(() => pushNow({ silent: true }), 2500);
       }
@@ -1057,7 +1115,7 @@
   function openSync() {
     const cfg = loadCfg();
     $('#syncToken').value  = cfg.token  || '';
-    $('#syncGistId').value = cfg.gistId || '';
+    $('#syncGistId').value = normalizeGistId(cfg.gistId || '');
     $('#syncAuto').checked = !!cfg.auto;
     const meta = loadMeta();
     if (meta.lastPull || meta.lastPush) {
@@ -1071,17 +1129,19 @@
   $('#syncSaveBtn').addEventListener('click', () => {
     saveCfg({
       token:  $('#syncToken').value.trim(),
-      gistId: $('#syncGistId').value.trim(),
+      gistId: normalizeGistId($('#syncGistId').value),
       auto:   $('#syncAuto').checked
     });
+    $('#syncGistId').value = loadCfg().gistId || '';
     toast('Einstellungen gespeichert');
   });
-  $('#syncPushBtn').addEventListener('click', () => { saveCfg({ ...loadCfg(), token: $('#syncToken').value.trim(), gistId: $('#syncGistId').value.trim(), auto: $('#syncAuto').checked }); pushNow(); });
-  $('#syncPullBtn').addEventListener('click', () => { saveCfg({ ...loadCfg(), token: $('#syncToken').value.trim(), gistId: $('#syncGistId').value.trim(), auto: $('#syncAuto').checked }); pullNow({ reloadIfChanged: true }); });
+  $('#syncTestBtn').addEventListener('click', testConnection);
+  $('#syncPushBtn').addEventListener('click', () => { saveCfg({ ...loadCfg(), token: $('#syncToken').value.trim(), gistId: normalizeGistId($('#syncGistId').value), auto: $('#syncAuto').checked }); pushNow(); });
+  $('#syncPullBtn').addEventListener('click', () => { saveCfg({ ...loadCfg(), token: $('#syncToken').value.trim(), gistId: normalizeGistId($('#syncGistId').value), auto: $('#syncAuto').checked }); pullNow({ reloadIfChanged: true }); });
 
   // ---------- Auto-Pull beim Start ----------
   const cfg = loadCfg();
-  if (cfg.auto && cfg.token && cfg.gistId && !sessionStorage.getItem('__synced')) {
+  if (cfg.auto && cfg.token && normalizeGistId(cfg.gistId) && !sessionStorage.getItem('__synced')) {
     sessionStorage.setItem('__synced', '1');
     pullNow({ silent: true, reloadIfChanged: true });
   }
